@@ -17,7 +17,7 @@ These steps will create the S3 bucket and DynamoDB table required in order to mi
 
 ### Verification
 1. Ensure a `terraform.tfstate` file is created in the S3 bucket
-2. Navigate to DynamoDb > Tables > `terraform-locks` > Items
+2. Navigate to DynamoDB > Tables > `terraform-locks` > Items
 3. Run `terraform plan` and refresh the items
 4. Observe a new item created - terraform has acquired a lock for the current execution
 5. Refresh again once `terraform plan` is complete and the item will be removed - the lock is released
