@@ -40,15 +40,10 @@ resource "aws_dynamodb_table" "terraform_locks" {
 
 # Uncomment and re-init
 /*
-# Configure terraform to store state for this project in S3
 terraform {
+  # Partial config; pulls data from backend.hcl
   backend "s3" {
-    bucket = "example-client-state-12856136783124"
     key = "global/s3/terraform.tfstate"
-    region = "us-east-1"
-
-    dynamodb_table = "terraform-locks"
-    encrypt = true
   }
 }
 */
