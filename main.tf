@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "terraform_state" {
   # Ensure terraform will delete all versions of this bucket
   force_destroy = true
 
-  # Prevent accidental deletion of this S3 bucket when running terraform destroy
+  # Prevent accidental deletion of this bucket when running terraform destroy
   lifecycle {
     prevent_destroy = true
   }
