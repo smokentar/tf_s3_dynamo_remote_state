@@ -25,7 +25,7 @@ These steps will create the S3 bucket and DynamoDB table required in order to mi
 4. Observe a new item created - terraform has acquired a lock for the current execution
 5. Refresh again once `terraform plan` is complete and the item will be removed - the lock is released
 
-### Next steps
+### 4. Next steps
 Once our resources are configured we can now use the same bucket across different projects to store terraform state.
 
 1. Copy `backend.hcl` to another project
