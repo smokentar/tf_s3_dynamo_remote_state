@@ -38,7 +38,7 @@ resource "aws_dynamodb_table" "terraform_locks" {
   }
 }
 
-# Uncomment and re-init + re-apply
+# Uncomment and re-init
 /*
 # Configure terraform to store state for this project in S3
 terraform {
