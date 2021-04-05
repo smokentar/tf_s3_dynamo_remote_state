@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-state-100200"
+  bucket_prefix = "terraform-state-"
 
   # Ensure terraform will delete all versions of this bucket
   force_destroy = true
