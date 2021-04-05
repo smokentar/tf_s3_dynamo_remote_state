@@ -28,7 +28,7 @@ These steps will create the S3 bucket and DynamoDB table required in order to mi
 
 ### 1. Migrate to local state
 
-1. Comment out the `terraform` block in `main.tf`. As no other option is specified terraform will default to storing state locally.
+1. Comment out the `terraform` block in `main.tf`. As no other option is specified terraform will default to storing state locally
 2. Re-initialize the project with `terraform init`. Required when re-configuring the backend
 
 ### 2. Destroy resources
