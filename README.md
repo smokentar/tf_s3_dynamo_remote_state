@@ -28,7 +28,7 @@ These steps will create the S3 bucket and DynamoDB table required in order to mi
 Once our resources are configured we can now use the same bucket for all of our clients to store terraform state.
 
 1. Copy `backend.hcl` to another project
-2. Copy the `terraform` block containing the backend configuration and edit the key. (key must be unique across all projects using the same bucket)
+2. Copy the `terraform` block containing the backend configuration and edit the key. (key must be unique across all projects using the same bucket)
 3. Re-initialize the project and pass in backend configuration with `terraform init -backend-config=backend.hcl`. Required when re-configuring the backend
 
 ## To destroy:
