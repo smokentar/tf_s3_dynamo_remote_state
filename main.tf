@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "example-client-state-12856136783124"
+  bucket = "terraform-state-100200"
 
   # Ensure terraform will delete all versions of this bucket
   force_destroy = true
@@ -28,7 +28,7 @@ resource "aws_s3_bucket" "terraform_state" {
 }
 
 resource "aws_dynamodb_table" "terraform_locks" {
-  name  = "terraform-locks"
+  name  = "terraform-state-lock"
   billing_mode = "PAY_PER_REQUEST"
   hash_key = "LockID"
 
@@ -39,11 +39,10 @@ resource "aws_dynamodb_table" "terraform_locks" {
 }
 
 # Uncomment and re-init
-/*
+
 terraform {
   # Partial config; pulls data from backend.hcl
   backend "s3" {
-    key = "global/s3/terraform.tfstate"
+    key = "global/project1/terraform.tfstate"
   }
 }
-*/
