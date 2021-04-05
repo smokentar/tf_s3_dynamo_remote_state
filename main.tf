@@ -35,7 +35,8 @@ resource "aws_dynamodb_table" "terraform_locks" {
   }
 }
 
-
+# Uncomment and re-init + re-apply
+/*
 # Configure terraform to store state for this project in S3
 terraform {
   backend "s3" {
@@ -47,3 +48,4 @@ terraform {
     encrypt = true
   }
 }
+*/
