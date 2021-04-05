@@ -8,7 +8,7 @@
 5. Inspect changes with `trerraform plan`
 6. Apply changes with `terraform apply --auto-approve`
 
-These steps will create the S3 bucket and DynamoDB table required in order to migrate the locally stored state located in `.terraform.tfstate`
+These steps will create the S3 bucket and DynamoDB table required in order to migrate the locally stored state in `.terraform.tfstate`
 
 ### Migrate the local state
 
