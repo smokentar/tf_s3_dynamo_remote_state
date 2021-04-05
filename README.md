@@ -15,6 +15,7 @@ These steps will create the S3 bucket and DynamoDB table required in order to mi
 ### 2. Migrate to remote state
 
 1. Uncomment the `terraform` block in `main.tf` which instructs what backend terraform should use for state
+3. Copy the newly created S3 bucket name from the console output and reference it in `backend.hcl`
 2. Re-initialize the project and pass in backend configuration with `terraform init -backend-config=backend.hcl`. Required when re-configuring the backend
 
 ### 3. Verification
