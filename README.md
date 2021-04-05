@@ -12,9 +12,9 @@
 
 These steps will create the S3 bucket and DynamoDB table required in order to migrate the locally stored state in `.terraform.tfstate`
 
-### 2. Migrate the local state
+### 2. Migrate to remote state
 
-1. Uncomment the `terraform` block which instructs what backend terraform should use for state
+1. Uncomment the `terraform` block in `main.tf` which instructs what backend terraform should use for state
 2. Re-initialize the project with `terraform init`. Required when re-configuring the backend
 
 ### 3. Verification
@@ -26,4 +26,14 @@ These steps will create the S3 bucket and DynamoDB table required in order to mi
 
 ## To destroy:
 
-### 1. 
+### 1. Migrate to local state
+
+1. Comment out the `terraform` block in `main.tf`. As no other option is specified terraform will default to storing state locally.
+2. Re-initialize the project with `terraform init`. Required when re-configuring the backend
+
+### 2. Destroy resources
+1. Comment out the `lifecycle` block for the S3 bucket in `main.tf` (otherwise terraform will fail to remove the bucket)
+2. Run `terraform destroy`
+
+### 3. Verification
+1. Ensure the S3 bucket and DynamoDB table do not exist
